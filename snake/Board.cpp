@@ -109,7 +109,7 @@ void Board::Refresh() {
 		const auto p1 = std::chrono::system_clock::now();
 		this->frameTime = std::chrono::duration_cast<std::chrono::milliseconds > (p1.time_since_epoch()).count();
 
-		if (this->frameTime - this->lastFrameTime >= 400) {
+		if (this->frameTime - this->lastFrameTime >= 300) {
 			ClearScreen();
 			
 			// spawn owocka
@@ -128,7 +128,7 @@ void Board::Refresh() {
 			lastTail.insert(this->grid, lastTail.getX(), lastTail.getY(), lastTail.getState());
 			snake.getHead().insert(this->grid, snake.getHead().getX(), snake.getHead().getY(), "\x1b[102m  \x1b[0m");
 
-			// w¹¿ mo¿e zjeœæ kolejnego owocka jeœli ju¿ zjad³
+			// waz moze zjesc kolejenego owocka jak juz zjadl
 			if (snake.eatenFruit()) {
 				snake.resetFruit();
 				fruit.Reset();
