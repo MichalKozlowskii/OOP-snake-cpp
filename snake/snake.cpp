@@ -60,7 +60,7 @@ void Snake::Move() {
 	else if (this->dir == LEFT) {
 		this->goLeft();
 	}
-	else if (this->dir = RIGHT) {
+	else if (this->dir == RIGHT) {
 		this->goRight();
 	}
 }
